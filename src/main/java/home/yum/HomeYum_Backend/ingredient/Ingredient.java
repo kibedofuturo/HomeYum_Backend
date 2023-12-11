@@ -1,9 +1,5 @@
 package home.yum.HomeYum_Backend.ingredient;
 
-
-import home.yum.HomeYum_Backend.recipes.Recipe;
-import home.yum.HomeYum_Backend.user.UpdateUserDTO;
-import home.yum.HomeYum_Backend.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;

@@ -1,9 +1,5 @@
 package home.yum.HomeYum_Backend.ingredient;
 
-import home.yum.HomeYum_Backend.user.ListUserDTO;
-import home.yum.HomeYum_Backend.user.UpdateUserDTO;
-import home.yum.HomeYum_Backend.user.User;
-import home.yum.HomeYum_Backend.user.UserDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
