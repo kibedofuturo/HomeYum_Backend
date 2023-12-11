@@ -28,9 +28,28 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Recipe> createdRecipes;
 
+    private boolean active;
+
     public User(UserDTO data) {
+        active = true;
         name = data.name();
         email = data.email();
         password = data.password();
+    }
+
+    public void UpdateInfo(UpdateUserDTO data) {
+        if (this.name != null) {
+            this.name = data.name();
+        }
+        if (this.email != null) {
+            this.email = data.email();
+        }
+        if (this.password != null) {
+            this.password = data.password();
+        }
+    }
+
+    public void delete() {
+        this.active = false;
     }
 }

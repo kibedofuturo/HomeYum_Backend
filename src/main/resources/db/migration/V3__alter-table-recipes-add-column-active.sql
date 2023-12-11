@@ -1,0 +1,3 @@
+ALTER TABLE recipes ADD COLUMN active TINYINT DEFAULT 1;
+UPDATE recipes SET active = 1;
+ALTER TABLE recipes MODIFY active TINYINT NOT NULL;

@@ -1,22 +1,16 @@
 package home.yum.HomeYum_Backend.user;
 
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
-import java.util.Map;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface IuserService {
     User findById(Long userId);
 
-    List<User> findAllUsers();
+    Page<ListUserDTO> findAllUsers(Pageable pagination);
 
-    void saveUser(User user);
+    void saveUser(UserDTO data);
 
-    void updateUser(User user);
-
-    ResponseEntity<String> updateUserAdapted(Long userId, Map<String, Object> updates);
-
-    void deleteUser(String userId);
+    void updateUser(UpdateUserDTO data);
 
     void deleteUser(Long userId);
 }
