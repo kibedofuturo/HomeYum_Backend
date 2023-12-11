@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Table(name = "rating")
+@Table(name = "ratings")
 @Entity(name = "Ratimg")
 @Getter
 @NoArgsConstructor
@@ -18,14 +18,30 @@ public class Rating {
     private long id;
 
     private String text;
-    private int score;
+    private Integer score;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    private boolean active;
+
     public Rating(RatingDTO data) {
+        active = true;
         text = data.text();
         score = data.score();
+    }
+
+    public void UpdateInfo(UpdateRatingDTO data) {
+        if (this.text != null) {
+            this.text = data.text();
+        }
+        if (this.score != null) {
+            this.score = data.score();
+        }
+    }
+
+    public void delete() {
+        this.active = false;
     }
 }
