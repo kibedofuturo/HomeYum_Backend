@@ -40,8 +40,8 @@ public class Recipe {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @NotNull
-    private Boolean active;
+    @Column(name = "active", columnDefinition = "boolean USING active::boolean")
+    private boolean active;
 
     public Recipe(RecipeDTO data){
         active = true;

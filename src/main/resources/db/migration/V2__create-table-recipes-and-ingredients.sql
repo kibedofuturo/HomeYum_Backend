@@ -1,23 +1,17 @@
-create table ingredients (
-    id bigint not null auto_increment,
-    name varchar(100) not null,
-    value double not null,
-
-    primary key (id)
+CREATE TABLE ingredients (
+                             id SERIAL PRIMARY KEY,
+                             name VARCHAR(100) NOT NULL,
+                             value DOUBLE PRECISION NOT NULL
 );
 
-create table recipes (
-    id bigint not null auto_increment,
-    name varchar(100) not null,
-    preparationmethod text not null,
-    preparationtime double  not null,
-    servingnumber int,
-    dificulty varchar(25),
-    category varchar(25),
-    user_id BIGINT,
-    ingredient_id BIGINT,
-
-    primary key (id),
-    foreign key (user_id) references users(id),
-    foreign key (ingredient_id) references ingredients(id)
+CREATE TABLE recipes (
+                         id SERIAL PRIMARY KEY,
+                         name VARCHAR(100) NOT NULL,
+                         preparationmethod TEXT NOT NULL,
+                         preparationtime DOUBLE PRECISION NOT NULL,
+                         servingnumber INT,
+                         difficulty VARCHAR(25),
+                         category VARCHAR(25),
+                         user_id BIGINT REFERENCES users(id),
+                         ingredient_id BIGINT REFERENCES ingredients(id)
 );

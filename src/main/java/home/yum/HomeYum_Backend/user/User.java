@@ -28,6 +28,7 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Recipe> createdRecipes;
 
+    @Column(name = "active", columnDefinition = "boolean USING active::boolean")
     private boolean active;
 
     public User(UserDTO data) {

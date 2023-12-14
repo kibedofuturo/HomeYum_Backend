@@ -24,6 +24,7 @@ public class Rating {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "active", columnDefinition = "boolean USING active::boolean")
     private boolean active;
 
     public Rating(RatingDTO data) {

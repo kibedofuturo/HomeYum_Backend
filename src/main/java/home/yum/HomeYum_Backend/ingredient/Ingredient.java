@@ -19,6 +19,7 @@ public class Ingredient {
     private String name;
     private Double value;
 
+    @Column(name = "active", columnDefinition = "boolean USING active::boolean")
     private boolean active;
 
     public Ingredient(IngredientDTO data) {
